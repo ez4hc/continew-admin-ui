@@ -2,15 +2,15 @@
   <div class="gi_page container">
     <div class="left-side">
       <div class="panel">
-        <Welcome />
+        <Welcome/>
       </div>
       <div style="margin-top: 14px">
         <a-grid :cols="24" :col-gap="14" :row-gap="14">
           <a-grid-item :span="24">
-            <Project />
-          </a-grid-item>
-          <a-grid-item :span="24">
-            <LatestActivity />
+            <a-card class="general-card" title="" style="margin-bottom: 14px">
+              <p>xbox4fun</p>
+            </a-card>
+
           </a-grid-item>
         </a-grid>
       </div>
@@ -19,17 +19,11 @@
       <a-grid :cols="24" :row-gap="14">
         <a-grid-item :span="24">
           <div class="panel moduler-wrap">
-            <QuickOperation />
+            <QuickOperation/>
           </div>
         </a-grid-item>
         <a-grid-item class="panel" :span="24">
-          <Carousel />
-        </a-grid-item>
-        <a-grid-item class="panel" :span="24">
-          <Notice />
-        </a-grid-item>
-        <a-grid-item class="panel" :span="24">
-          <Docs />
+          <Notice/>
         </a-grid-item>
       </a-grid>
     </div>
@@ -38,14 +32,10 @@
 
 <script setup lang="ts">
 import Welcome from './components/Welcome.vue'
-import Project from './components/Project.vue'
-import LatestActivity from './components/LatestActivity.vue'
 import QuickOperation from './components/QuickOperation.vue'
-import Carousel from './components/Carousel.vue'
 import Notice from './components/Notice.vue'
-import Docs from './components/Docs.vue'
 
-defineOptions({ name: 'Workplace' })
+defineOptions({name: 'Workplace'})
 </script>
 
 <style scoped lang="scss">
@@ -67,13 +57,16 @@ defineOptions({ name: 'Workplace' })
   border-radius: 4px;
   overflow: auto;
 }
+
 :deep(.panel-border) {
   margin-bottom: 0;
   border-bottom: 1px solid rgb(var(--gray-2));
 }
+
 .moduler-wrap {
   border-radius: 4px;
   background-color: var(--color-bg-2);
+
   :deep(.text) {
     font-size: 12px;
     text-align: center;
@@ -90,11 +83,13 @@ defineOptions({ name: 'Workplace' })
         margin-bottom: 0;
       }
     }
+
     &:hover {
       .icon {
         color: rgb(var(--arcoblue-6));
         background-color: #e8f3ff;
       }
+
       .text {
         color: rgb(var(--arcoblue-6));
       }
@@ -122,6 +117,7 @@ defineOptions({ name: 'Workplace' })
   .container {
     display: block;
   }
+
   .right-side {
     // display: none;
     width: 100%;
